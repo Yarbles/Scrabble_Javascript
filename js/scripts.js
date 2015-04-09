@@ -50,3 +50,16 @@ var scrabbleScore = function(input) {
     });
     return final_score;
 };
+
+
+$(document).ready(function() {
+    $("form#scrabble-score").submit(function(event) {
+        var user_input = $("input#word").val();
+        var result = scrabbleScore(user_input);
+
+    $(".score").text(result);
+    $("#result").show();
+
+    event.preventDefault();
+    });
+});
